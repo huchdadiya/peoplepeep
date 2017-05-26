@@ -1,0 +1,90 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:context="http://www.springframework.org/schema/context"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:p="http://www.springframework.org/schema/p"
+xmlns:mvc="http://www.springframework.org/schema/mvc"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/data/mongo
+		http://www.springframework.org/schema/data/mongo/spring-mongo-1.8.xsd">
+
+	 <!-- View resolver that will append /jsp/ as prefix and .jsp as suffix in view file -->
+	   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	      <property name="prefix" value="/jsp/"/>
+	      <property name="suffix" value=".jsp"/>
+	   </bean>
+
+
+	<!-- Declares support for general annotations such as @Required, @Autowired, @PostConstruct-->
+	<context:annotation-config/>
+	
+	<!-- Declares explicit support for annotation-driven MVC controllers (i.e. @RequestMapping, @Controller-->
+	<mvc:annotation-driven/>
+	
+	<!-- Packages that needs to be scanned for annotations -->
+	<context:component-scan base-package="com.peoplepeep.controller" />
+   <!--
+   <context:component-scan base-package="com.application.services" />
+   <context:component-scan base-package="com.application.model" />
+   <context:component-scan base-package="com.application.util" /> -->
+   
+ 	<!-- External resources mappings -->
+	<!-- <mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/fonts/" mapping="/fonts/**" />
+	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/jsp/" mapping="/jsp/**" />
+	<mvc:resources location="/images/" mapping="/images/**" /> -->
+
+
+	<!-- LIVE DB -->
+	<!-- <mongo:db-factory dbname="publicpayer" 
+			username="admin" password="QsRM3Hgd4ARV" host="127.11.198.130"
+			 port="27017"/> -->
+	 
+	 <!-- LOCAL DB -->
+	 <!-- <mongo:db-factory dbname="publicpayer" 
+			host="localhost"
+			 port="27017"/>
+	 
+	 <bean id="mappingContext"
+		class="org.springframework.data.mongodb.core.mapping.MongoMappingContext" />
+	 
+	 <bean id="defaultMongoTypeMapper"
+		class="org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper">
+		<constructor-arg name="typeKey"><null/></constructor-arg>
+	 </bean>
+ 
+	<bean id="mappingMongoConverter"
+		class="org.springframework.data.mongodb.core.convert.MappingMongoConverter">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+		<constructor-arg name="mappingContext" ref="mappingContext" />
+		<property name="typeMapper" ref="defaultMongoTypeMapper" />
+ 	</bean>
+ 
+ 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
+		<constructor-arg name="mongoConverter" ref="mappingMongoConverter" />
+	 </bean>
+	
+	<mongo:repositories base-package="com.application.repositories" /> -->
+	
+	<!-- This will enable AOP workflow -->
+	<!-- <aop:aspectj-autoproxy/> -->
+    
+    <!-- Actual aspect class for logging -->
+    <!-- <bean id="myLogger" class="com.application.aspect.AuditMaker"/> -->
+
+
+</beans>
