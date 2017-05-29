@@ -41,11 +41,11 @@ xsi:schemaLocation="
    <context:component-scan base-package="com.application.util" /> -->
    
  	<!-- External resources mappings -->
-	<!-- <mvc:resources location="/css/" mapping="/css/**" />
-	<mvc:resources location="/fonts/" mapping="/fonts/**" />
-	<mvc:resources location="/js/" mapping="/js/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/jsp/" mapping="/jsp/**" />
-	<mvc:resources location="/images/" mapping="/images/**" /> -->
+	<mvc:resources location="/images/" mapping="/images/**" />
+	<!-- <mvc:resources location="/fonts/" mapping="/fonts/**" />
+	<mvc:resources location="/js/" mapping="/js/**" /> -->
 
 
 	<!-- LIVE DB -->
