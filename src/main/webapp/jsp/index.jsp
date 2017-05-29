@@ -7,8 +7,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300' rel='stylesheet' type='text/css'>
 		
-		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="${pageContext.request.contextPath}/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="${pageContext.request.contextPath}/images/favicon.ico" type="image/x-icon">
 	</head>
 	<body>
 		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
@@ -19,12 +19,12 @@
 		<div class="wrap">
 			<div class="content-grid">
 				<p>
-					<img src="images/top.png" title="">
+					<img src="${pageContext.request.contextPath}/images/top.png" title="">
 				</p>
 			</div>
 			<div class="grid">
 				<p>
-					<img src="images/logoFinal.png" title="" style="width:250px;">
+					<img src="${pageContext.request.contextPath}/images/logoFinal.png" title="" style="width:250px;">
 				</p>
 				<h3 style="color:#000;">
 					Something amazing is Coming Soon...
